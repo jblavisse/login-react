@@ -14,6 +14,8 @@ export default function Tasks() {
       .then((res) => {
         console.log(res);
       })
+
+      window.localStorage.setItem('bachibouzouk', 'coucouuuuu');
     }
 
     return (
