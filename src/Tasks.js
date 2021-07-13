@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 
 export default function Tasks() {
     const [email, setEmail] = useState("");
@@ -6,12 +7,13 @@ export default function Tasks() {
   
     const handleSubmit = (e) => {
       e.preventDefault();
-      // const authInfos = {
-      //   email: email,
-      //   password: password
-      // }
-      const authInfos = {email, password};
-      console.log(authInfos);
+      axios.post("http://localhost:3003/login", {
+          email: email,
+          password: password
+      })
+      .then((res) => {
+        console.log(res);
+      })
     }
 
     return (
