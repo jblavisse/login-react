@@ -13,9 +13,8 @@ export default function Tasks() {
       })
       .then((res) => {
         console.log(res);
+        window.localStorage.setItem('user',res.data.accessToken)
       })
-
-      window.localStorage.setItem('bachibouzouk', 'coucouuuuu');
     }
 
     return (
